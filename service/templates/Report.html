@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load  static %}
+
+
+{% block content %}
+<div class="container">
+    <h1>Отчёт</h1>
+    {% for report in reports %}
+    <div style="margin-bottom:2rem;" class="card">
+        <div class="card-header">
+            <h7 class="card-title">Фамилия: {{report.surname}}</h7>
+        </div>
+        <div class="card-header">
+            <h5 class="card-title">Имя:</h5> {{report.name}}
+        </div>
+        <div class="card-header">
+            <h5 class="card-title">Отчества:</h5> {{report.patronymic}}
+        </div>
+        <div class="card-header">
+            <h5 class="card-title">ПИН: </h5>{{report.pin}}
+        </div>
+        <div class="card-header">
+            <h5 class="card-title">Адрес: </h5>{{report.address}}
+        </div>
+        <div class="card-header">
+            <h5 class="card-title">Фабула: {{report.plot}}</h5>
+        </div>
+        <div class="card-header">
+            <h5 class="card-title">Фото: {{report.image}}</h5>
+        </div>
+
+     </div>
+    {% endfor %}
+
+{% endblock %}
+
