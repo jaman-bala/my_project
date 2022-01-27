@@ -15,13 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.urls import include
+from django.conf.urls import include, url
 from django.conf import settings
 from django.conf.urls.static import static
+from account.views import user_login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('service.urls'))
+    path('', include('service.urls')),
+    url(r'^account/', include('account.urls')),
+    url('', user_login, name='login'),
 ]
 
 if settings.DEBUG:
