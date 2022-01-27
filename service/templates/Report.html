@@ -4,11 +4,11 @@
 
 {% block content %}
 <div class="container">
-    <h1>Отчёт</h1>
+    <h1>Список</h1>
     {% for report in reports %}
     <div style="margin-bottom:2rem;" class="card">
         <div class="card-header">
-            <h7 class="card-title">Фамилия: {{report.surname}}</h7>
+            <h5 class="card-title">Фамилия:</h5> {{report.surname}}
         </div>
         <div class="card-header">
             <h5 class="card-title">Имя:</h5> {{report.name}}
@@ -23,13 +23,23 @@
             <h5 class="card-title">Адрес: </h5>{{report.address}}
         </div>
         <div class="card-header">
-            <h5 class="card-title">Фабула: {{report.plot}}</h5>
+            <h5 class="card-title">Фабула:</h5> {{report.plot}}
         </div>
         <div class="card-header">
-            <h5 class="card-title">Фото: {{report.image}}</h5>
+            <h5 class="card-title">Фото 3x4:</h5> {{report.image}}
+        </div>
+        <div class="card-header">
+            <h5 class="card-title">Фото фото в рост:</h5>
+
+            {{report.image1.url}}
+        </div>
+        <div class="card-header">
+            <h5 class="card-title">Фото фото с боку</h5>: {{report.image2.url}}
         </div>
 
      </div>
+
+
     {% endfor %}
 
 {% endblock %}

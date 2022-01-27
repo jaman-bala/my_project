@@ -23,11 +23,8 @@ def report(request):
     context = {'reports': reports}
     return render(request, 'Report.html', context)
 
-# def index(request):
-#     form = PostForm(request.POST, request.FILES)
-#     if form.is_valid():
-#         form.save()
-#     else:
-#         form = PostForm()
-#
-#     return render(request, "index.html", {"form": form})
+
+def registr(request):
+    registre = Post.objects.all()
+    context = {'registre': registre}
+    return render(request, 'registr.html', context)

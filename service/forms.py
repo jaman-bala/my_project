@@ -5,7 +5,7 @@ from .models import Post
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('surname', 'name', 'patronymic', 'pin', 'plot', 'image', 'image1', 'image2')
+        fields = ('surname', 'name', 'patronymic', 'pin', 'address', 'plot', 'image', 'image1', 'image2')
         widgets = {
 
             "surname": forms.TextInput(
@@ -28,17 +28,24 @@ class PostForm(forms.ModelForm):
                 attrs={"class": "form-control",
                        "placeholder": "Адрес"
                        }),
-            "plot": forms.TextInput(
+
+            "plot": forms.Textarea(
                 attrs={"class": "form-control",
-                       "placeholder": "Фабула"
+                       "placeholder": "Фабула",
+                        "rows": 5,
                        }),
-            "image": forms.TextInput(
+            "image": forms.FileInput(
                 attrs={"class": "form-control",
-                       "placeholder": "Фото"
+
+                       "placeholder": "Фото",
+
+
                        }),
             "image1": forms.FileInput(
                 attrs={"class": "form-control",
-                       "placeholder": "Фото"
+                       "placeholder": "Фото",
+                       "id": "imgInp",
+                       "type": "file",
                        }),
             "image2": forms.FileInput(
                 attrs={"class": "form-control",
@@ -46,7 +53,6 @@ class PostForm(forms.ModelForm):
                        }),
 
         }
-# image = forms.URLField(required=True,
-#                        label=False,
-#                        widget=forms.TextInput(
-#                         attrs={'placeholder': 'add image'}))
+# <img id="face-preview" class="img-thumbnail d-block"
+# style="display: block; margin-left: auto; margin-right: auto;"
+# src="//search4faces.com/img/user-placeholder.jpg" alt="placeholder">

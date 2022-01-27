@@ -3,27 +3,125 @@
 
 
 {% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!--<form method="POST" class="post-form" id="form1" runat="server">-->
+<div class="container-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
 
-    <form method="POST" class="post-form">
-                <div class="container-sm">
-                    <div class="container">
-                      <div class="row">
-                        <div class="col">
-                            {% csrf_token %}
+                {{ form }}
 
-                            {{ form }}
-
-
-
-                                </div>
-                          <div class="col">
-
-                          <p><img src="#" alt="Фото автомобиля" class="passe-partout"></p>
-
-                        </div>
-                      </div>
                 <button type="submit" class="save btn btn-dark">Добавить</button>
+                </form>
+
+
             </div>
-    </form>
-{% endblock %}
+        </div>
+    </div>
+
+
+    <div class="col">
+
+
+        <fieldset id="search-fields">
+            <div class="form-row">
+                <div class="d-flex justify-content-center">
+                    <div class="p2"><div id="slider-container" class="slick-initialized slick-slider">
+                        <div class="slick-list draggable">
+                            <div class="slick-track"
+                                 style="opacity: 1; width: 254px; transform: translate3d(0px, 0px, 0px);">
+                                <div class="slick-slide slick-current slick-active"
+                                     data-slick-index="0" aria-hidden="false"
+                                     style="width: 254px;">
+                                    <div>
+                                        <div style="width: 100%; display: inline-block;"><img
+                                                id="face-preview" class="img-thumbnail d-block"
+                                                style="display: block; margin-left: auto; margin-right: auto;"
+                                                src="//search4faces.com/img/user-placeholder.jpg"
+                                                alt="placeholder"></div>
+
+
+                                        <button id="upload-button" type="button"
+                                                class="btn btn-primary mt-4 d-block float-right uppload-button"
+                                                style="margin-left:10px;margin-bottom:5px;margin-right: 5px;">
+                                            Загрузить
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                    <div class="p2"><div id="slider-container" class="slick-initialized slick-slider">
+                        <div class="slick-list draggable">
+                            <div class="slick-track"
+                                 style="opacity: 1; width: 254px; transform: translate3d(0px, 0px, 0px);">
+                                <div class="slick-slide slick-current slick-active"
+                                     data-slick-index="0" aria-hidden="false"
+                                     style="width: 254px;">
+                                    <div>
+                                        <div style="width: 100%; display: inline-block;"><img
+                                                id="face-preview" class="img-thumbnail d-block"
+                                                style="display: block; margin-left: auto; margin-right: auto;"
+                                                src="//search4faces.com/img/user-placeholder.jpg"
+                                                alt="placeholder"></div>
+
+
+                                        <button id="upload-button" type="button"
+                                                class="btn btn-primary mt-4 d-block float-right uppload-button"
+                                                style="margin-left:10px;margin-bottom:5px;margin-right: 5px;">
+                                            Загрузить
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                    <div class="p2"><div id="slider-container" class="slick-initialized slick-slider">
+                        <div class="slick-list draggable">
+                            <div class="slick-track"
+                                 style="opacity: 1; width: 254px; transform: translate3d(0px, 0px, 0px);">
+                                <div class="slick-slide slick-current slick-active"
+                                     data-slick-index="0" aria-hidden="false"
+                                     style="width: 254px;">
+                                    <div>
+                                        <div style="width: 100%; display: inline-block;"><img
+                                                id="face-preview" class="img-thumbnail d-block"
+                                                style="display: block; margin-left: auto; margin-right: auto;"
+                                                src="//search4faces.com/img/user-placeholder.jpg"
+                                                alt="placeholder"></div>
+
+
+                                        <button id="upload-button" type="button"
+                                                class="btn btn-primary mt-4 d-block float-right uppload-button"
+                                                style="margin-left:10px;margin-bottom:5px;margin-right: 5px;">
+                                            Загрузить
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                </div>
+
+
+                <button id="search-button" type="button" class="btn btn-primary float-right mt-4"
+                        disabled="">Найти
+                </button>
+            </div>
+    </div>
+    </fieldset>
+
+
+    <!--                          <p><img src="#" alt="Фото автомобиля" class="passe-partout"></p>-->
+
+    <!--                        </div>-->
+    <!--                      </div>-->
+
+    {% endblock %}
 
