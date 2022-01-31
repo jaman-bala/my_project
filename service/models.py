@@ -18,6 +18,6 @@ class Post(models.Model):
         verbose_name_plural = "Добавить данные"
 
     def __str__(self):
-        return self.name
+        return self.id
 
 

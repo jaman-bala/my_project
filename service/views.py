@@ -2,6 +2,9 @@ from django.shortcuts import render
 from .forms import PostForm
 from django.views.generic import TemplateView, ListView, DetailView
 from .models import *
+from rest_framework.viewsets import ModelViewSet
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import SearchFilter, OrderingFilter
 
 
 def index(request):
@@ -25,5 +28,11 @@ class ReportListView(ListView):
     context_object_name = "reports"
 
 
-
-
+class SearchViewSet(ModelViewSet):
+    queryset = Post.objects.all()
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filter_fields = ['pin']
+    search_fields = ['pin', 'name', 'surname', 'patronymic']
+    ordering_fields = ['pin', 'name', 'surname', 'patronymic']
+    template_name = "Report.html"
+    context_object_name = "reports"
