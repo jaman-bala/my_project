@@ -37,19 +37,19 @@ class PostForm(forms.ModelForm):
             "image": forms.FileInput(
                 attrs={"class": "form-control",
 
-                       "placeholder": "Фото",
+                       "placeholder": "",
 
 
                        }),
             "image1": forms.FileInput(
                 attrs={"class": "form-control",
-                       "placeholder": "Фото",
+                       "placeholder": "",
                        "id": "imgInp",
                        "type": "file",
                        }),
             "image2": forms.FileInput(
                 attrs={"class": "form-control",
-                       "placeholder": "Фото"
+                       "placeholder": ""
                        }),
 
         }
