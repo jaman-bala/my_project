@@ -1,4 +1,3 @@
-
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -17,15 +16,11 @@ def user_login(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return redirect('index')
-                else:
-                    return HttpResponse('Неактивный аккаунт')
-        else:
-            return HttpResponse('Неправильный логин или пароль')
+                    return redirect('service.urls')
+
     else:
         form = LoginForm()
     return render(request, 'login.html', context={'form': form})
-
 
 # def register(request):
 #     if request.method == 'POST':

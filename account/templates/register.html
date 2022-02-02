@@ -6,7 +6,7 @@
 {%block content%}
 <div class="span7">
     <h4 class="title"><span class="text">Форма Регистрации</span></h4>
-    <form action="." method="post" class="form-stacked">
+    <form action="." method="POST" class="form-stacked">
         {% csrf_token %}
         {%if user_form.errors %}
             <p>{{user_form.errors}}</p>
