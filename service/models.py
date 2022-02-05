@@ -16,8 +16,9 @@ class Post(models.Model):
     class Meta:
         verbose_name = "Добавить"
         verbose_name_plural = "Добавить данные"
+        ordering = ["-created"]
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
 

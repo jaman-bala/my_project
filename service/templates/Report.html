@@ -19,42 +19,75 @@
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
   </form>
 </nav></h1>
-    {% for report in reports %}
-    <div style="margin-bottom:2rem;" class="card">
-        <div class="card-header">
-            <h5 class="card-title">Фамилия:</h5> {{report.surname}}
-        </div>
-        <div class="card-header">
-            <h5 class="card-title">Имя:</h5> {{report.name}}
-        </div>
-        <div class="card-header">
-            <h5 class="card-title">Отчества:</h5> {{report.patronymic}}
-        </div>
-        <div class="card-header">
-            <h5 class="card-title">ПИН: </h5>{{report.pin}}
-        </div>
-        <div class="card-header">
-            <h5 class="card-title">Адрес: </h5>{{report.address}}
-        </div>
-        <div class="card-header">
-            <h5 class="card-title">Фабула:</h5> {{report.plot}}
-        </div>
-        <div class="card-header">
-            <h5 class="card-title">Фото 3x4:</h5> {{report.image}}
-        </div>
-        <div class="card-header">
-            <h5 class="card-title">Фото фото в рост:</h5>
-
-            {{report.image1.url}}
-        </div>
-        <div class="card-header">
-            <h5 class="card-title">Фото фото с боку</h5>: {{report.image2.url}}
-        </div>
-
-     </div>
 
 
-    {% endfor %}
+    <div class="table-responsive form-group">
+          <table class="table table-bordered">
+
+            <thead>
+              <tr>
+                <td class="text-center">Фото</td>
+                <td class="text-left">Фамилия</td>
+                <td class="text-left">Имя</td>
+                <td class="text-left">Отчество</td>
+                <td class="text-right">ПИН</td>
+                <td class="text-right">Адрес</td>
+                <td class="text-right">Фабула</td>
+              </tr>
+            </thead>
+            <tbody>
+
+
+              <tr>
+                   {% for report in reports %}
+                <td class="text-center"><img width="70px" src="{{ report.image.url }}" alt="" ></td>
+                <td class="text-left">{{report.surname }}</td>
+                <td class="text-left">{{report.name }}</td>
+                <td class="text-left">{{report.patronymic }}</td>
+                <td class="text-right">{{ report.pin }}</td>
+                <td class="text-right">{{ report.address }}</td>
+                <td class="text-right">{{ report.plot }}</td>
+              </tr>
+
+             {% endfor %}
+            </tbody>
+          </table>
+        </div>
+<!--    <div style="margin-bottom:2rem;" class="card">-->
+<!--        <div class="card-header">-->
+<!--            <h5 class="card-title">Фамилия:</h5> {{report.surname}}-->
+<!--        </div>-->
+<!--        <div class="card-header">-->
+<!--            <h5 class="card-title">Имя:</h5> {{report.name}}-->
+<!--        </div>-->
+<!--        <div class="card-header">-->
+<!--            <h5 class="card-title">Отчества:</h5> {{report.patronymic}}-->
+<!--        </div>-->
+<!--        <div class="card-header">-->
+<!--            <h5 class="card-title">ПИН: </h5>{{report.pin}}-->
+<!--        </div>-->
+<!--        <div class="card-header">-->
+<!--            <h5 class="card-title">Адрес: </h5>{{report.address}}-->
+<!--        </div>-->
+<!--        <div class="card-header">-->
+<!--            <h5 class="card-title">Фабула:</h5> {{report.plot}}-->
+<!--        </div>-->
+<!--        <div class="card-header">-->
+<!--            <h5 class="card-title">Фото 3x4:</h5> {{report.image}}-->
+<!--        </div>-->
+<!--        <div class="card-header">-->
+<!--            <h5 class="card-title">Фото фото в рост:</h5>-->
+
+<!--            {{report.image1.url}}-->
+<!--        </div>-->
+<!--        <div class="card-header">-->
+<!--            <h5 class="card-title">Фото фото с боку</h5>: {{report.image2.url}}-->
+<!--        </div>-->
+
+<!--     </div>-->
+
+
+
 
 {% endblock %}
 

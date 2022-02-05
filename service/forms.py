@@ -53,6 +53,3 @@ class PostForm(forms.ModelForm):
                        }),
 
         }
-# <img id="face-preview" class="img-thumbnail d-block"
-# style="display: block; margin-left: auto; margin-right: auto;"
-# src="//search4faces.com/img/user-placeholder.jpg" alt="placeholder">

@@ -36,3 +36,9 @@ class SearchViewSet(ModelViewSet):
     ordering_fields = ['pin', 'name', 'surname', 'patronymic']
     template_name = "Report.html"
     context_object_name = "reports"
+
+
+class SearchListView(ListView):
+    model = Post
+    template_name = "search_photo.html"
+    context_object_name = "search-photo"

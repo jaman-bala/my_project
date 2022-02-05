@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from deepface import DeepFace
 
 img1_path = '/home/jamanbala_it/Рабочий стол/project_base/database/img1.jpeg'
-img2_path = '/home/jamanbala_it/Рабочий стол/project_base/database/img5.jpg'
+img2_path = '/home/jamanbala_it/Рабочий стол/project_base/database/img4.jpg'
 
 img1 = DeepFace.detectFace(img1_path)
 img2 = DeepFace.detectFace(img2_path)

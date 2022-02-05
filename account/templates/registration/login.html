@@ -72,13 +72,20 @@
 			padding: 10px;
 			margin-top: 10px;
 		}
-	</style>
 
+		.center-img {
+			  display: block;
+			  margin: 0 auto;
+			}
+
+	</style>
+{% load static %}
 </head>
 <body>
 	<div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
+				<p><img style="margin-center: 12px" src="{% static 'img/Logomvd.png' %}" width="120" height="120" alt="" class="center-img"></p>
 				<div class="d-flex justify-content-center">
 
 
